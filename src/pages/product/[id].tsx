@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 
+import Head from "next/head";
 import Image from "next/image";
 
 import Stripe from "stripe";
@@ -58,6 +59,10 @@ export default function Product({ product }: ProductProps) {
 
   return (
     <>
+      <Head>
+        <title>{product.name} - Ignite Shop</title>
+      </Head>
+
       <ProductContainer>
         <ImageContainer>
           <Image src={product.imageUrl} alt="" height={520} width={480} />
